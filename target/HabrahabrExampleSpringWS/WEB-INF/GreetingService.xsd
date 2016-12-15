@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+        xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.example.org/HelloService"
+        elementFormDefault="qualified"
+        xmlns:HSS="http://www.example.org/HelloService"
+>
+    <element name="GreetingServiceRequest">
+        <complexType>
+            <sequence>
+                <element name="number" type="int" maxOccurs="1" minOccurs="1" />
+                <element name="greeting" type="string" maxOccurs="1" minOccurs="1"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="GreetingServiceResponse">
+        <complexType>
+            <sequence>
+                <element name="greeting" type="HSS:greetingType" maxOccurs="unbounded" minOccurs="1"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="greetingType">
+        <sequence>
+            <element name="number" type="int" maxOccurs="1" minOccurs="1" />
+            <element name="greeting" type="string" maxOccurs="1" minOccurs="1" />
+        </sequence>
+    </complexType>
+</schema>
